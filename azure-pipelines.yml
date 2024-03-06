@@ -28,6 +28,10 @@ steps:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
 
+- task: DownloadPipelineArtifact@2
+  inputs:
+    patterns: '**/*.zip'
+
 - task: VSTest@2
   inputs:
     platform: '$(buildPlatform)'

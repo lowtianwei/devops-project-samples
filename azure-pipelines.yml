@@ -28,6 +28,26 @@ steps:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
 
+# MSBuild v1
+# Build with MSBuild.
+- task: MSBuild@1
+  inputs:
+    solution: '$(solution)' # string. Required. Project. Default: **/*.sln.
+    #msbuildLocationMethod: 'version' # 'version' | 'location'. MSBuild. Default: version.
+    #msbuildVersion: 'latest' # 'latest' | '17.0' | '16.0' | '15.0' | '14.0' | '12.0' | '4.0'. Optional. Use when msbuildLocationMethod = version. MSBuild Version. Default: latest.
+    #msbuildArchitecture: 'x86' # 'x86' | 'x64'. Optional. Use when msbuildLocationMethod = version. MSBuild Architecture. Default: x86.
+    #msbuildLocation: # string. Optional. Use when msbuildLocationMethod = location. Path to MSBuild. 
+    #platform: # string. Platform. 
+    #configuration: # string. Configuration. 
+    #msbuildArguments: # string. MSBuild Arguments. 
+    #clean: false # boolean. Clean. Default: false.
+  # Advanced
+    #maximumCpuCount: false # boolean. Build in Parallel. Default: false.
+    #restoreNugetPackages: false # boolean. Restore NuGet Packages. Default: false.
+    #logProjectEvents: false # boolean. Record Project Details. Default: false.
+    #createLogFile: false # boolean. Create Log File. Default: false.
+    #logFileVerbosity: 'normal' # 'quiet' | 'minimal' | 'normal' | 'detailed' | 'diagnostic'. Optional. Use when createLogFile = true. Log File Verbosity. Default: normal.
+
 - task: DownloadPipelineArtifact@2
   inputs:
     patterns: '**/*.zip'

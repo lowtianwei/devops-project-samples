@@ -62,7 +62,8 @@ steps:
   # Advanced
     #StoreAsTar: false # boolean. Tar the artifact before uploading. Default: false.
 
-- task: VSTest@2
+- task: IISWebAppDeploymentOnMachineGroup@0
   inputs:
-    platform: '$(buildPlatform)'
-    configuration: '$(buildConfiguration)'
+    WebSiteName: 'sample'
+    VirtualApplication: 'C:\inetpub\sample'
+    Package: '$(System.DefaultWorkingDirectory)\**\*.zip'

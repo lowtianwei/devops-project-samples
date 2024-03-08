@@ -15,6 +15,16 @@ variables:
   buildConfiguration: 'Release'
 
 steps:
+- task: PowerShellOnTargetMachines@3
+  inputs:
+    Machines: 'ec2-18-140-53-194.ap-southeast-1.compute.amazonaws.com'
+    UserName: 'Administrator'
+    UserPassword: '$(passwd)'
+    InlineScript: |
+      # Write your powershell commands here.
+      
+      Write-Output "Hello World"
+    
 - task: NuGetToolInstaller@1
 
 - task: NuGetCommand@2

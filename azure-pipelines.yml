@@ -17,7 +17,7 @@ variables:
 steps:
 - task: PowerShellOnTargetMachines@3
   inputs:
-    Machines: 'ec2-54-179-24-47.ap-southeast-1.compute.amazonaws.com'
+    Machines: '$(public_dns)'
     UserName: 'Administrator'
     UserPassword: '$(passwd)'
     ScriptType: 'FilePath'

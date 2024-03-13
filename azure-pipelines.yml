@@ -15,13 +15,6 @@ variables:
   buildConfiguration: 'Release'
 
 steps:
-- task: PowerShellOnTargetMachines@3
-  inputs:
-    Machines: '$(public_dns)'
-    UserName: 'Administrator'
-    UserPassword: '$(passwd)'
-    ScriptType: 'FilePath'
-    ScriptPath: 'C:\Users\Administrator\Desktop\CheckModifiedFile.ps1'
     
 - task: NuGetToolInstaller@1
 
